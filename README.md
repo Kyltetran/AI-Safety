@@ -5,7 +5,7 @@
 This repository documents our research journey exploring **AI safety considerations in fake news detection**. We systematically evaluated **five major datasets** using both classical machine learning and deep learning approaches to understand their strengths, limitations, and real-world applicability, and ultimately selecting **WELFake** as the primary dataset due to its balance, diversity, and strong ethical design.
 
 > **Important:** This is a research and educational project. We also built an **educational website** to share our findings—not a detection tool or platform. Our goal is to inform and educate about the challenges, methodologies, and safety concerns in AI-powered misinformation detection.
-> This repository includes code adapted from various open-source authors around the world. Our team combined, modified, and analyzed these implementations for research and educational purposes.
+> Also, this repository includes code adapted from various open-source authors around the world. Our team combined, modified, and analyzed these implementations for research and educational purposes.
 
 ---
 
@@ -197,4 +197,5 @@ This research supports an **educational website** that:
 - Provides transparent documentation of our research process
 
 **We are researchers and educators, not building a commercial detection tool.** Our goal is to inform better decision-making about AI deployment in high-stakes information environments.
+
 

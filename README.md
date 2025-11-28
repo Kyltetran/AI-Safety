@@ -65,7 +65,6 @@ We prioritize **interpretability, robustness, and fairness** over raw accuracy m
 **Conclusion:** Too small for meaningful model training. Suitable only as a qualitative benchmark.
 
 
-
 ### 4. PHEME Rumor Detection Dataset
 **Size:** 60,000+ tweets
 
@@ -118,6 +117,24 @@ We prioritize **interpretability, robustness, and fairness** over raw accuracy m
 
 ---
 
+## Interpretability Analysis on WELFake (SHAP for Logistic Regression & XGBoost)
+
+To ensure transparency in model decision-making, we applied **SHAP (SHapley Additive exPlanations)** to the WELFake dataset using two representative classical models: **Logistic Regression** (linear, interpretable) and **XGBoost** (non-linear, high-performance).
+
+### Logistic Regression Insights:
+> SHAP for Logistic Regression (KernelExplainer / LinearExplainer depending on setup)
+- **Real news indicators:** "taxes," "capitol," "war," "government"
+- **Fake news indicators:** "terror," "suspect," "senator," "stop"
+- **Interpretation:** Linear, transparent feature weights—easy to audit
+
+### XGBoost Insights:
+> SHAP for XGBoost (TreeExplainer with pred_contribs=True)
+- **Top features:** "surveillance," "middle," "weapons"
+- **Behavior:** Context-dependent, captures non-linear feature interactions
+- **Method:** TreeSHAP provides exact feature attributions
+
+---
+
 ## Key Research Findings
 
 ### Classical ML vs. Deep Learning Trade-offs
@@ -143,29 +160,6 @@ We prioritize **interpretability, robustness, and fairness** over raw accuracy m
 - Requires large datasets
 
 **Key Insight:** For WELFake, classical ML methods achieve 96.5% accuracy in 20-30 minutes, while deep learning gains only ~2% more accuracy but requires hours of GPU training. The trade-off depends on deployment context.
-
----
-
-## Interpretability Analysis with SHAP
-
-We applied **SHAP (SHapley Additive exPlanations)** to understand model decision-making:
-
-### Logistic Regression Insights:
-- **Real news indicators:** "taxes," "capitol," "war," "government"
-- **Fake news indicators:** "terror," "suspect," "senator," "stop"
-- **Interpretation:** Linear, transparent feature weights—easy to audit
-
-### XGBoost Insights:
-- **Top features:** "surveillance," "middle," "weapons"
-- **Behavior:** Context-dependent, captures non-linear feature interactions
-- **Method:** TreeSHAP provides exact feature attributions
-
-### Random Forest Limitation:
-- Distributed decision-making across many trees
-- SHAP analysis computationally expensive
-- Less interpretable than linear models despite high performance
-
-**Key Insight:** Linear models (Logistic Regression, SVM) provide the clearest explanations. XGBoost balances performance with interpretability. BERT models remain largely opaque despite highest accuracy.
 
 ---
 
@@ -197,5 +191,6 @@ This research supports an **educational website** that:
 - Provides transparent documentation of our research process
 
 **We are researchers and educators, not building a commercial detection tool.** Our goal is to inform better decision-making about AI deployment in high-stakes information environments.
+
 
 

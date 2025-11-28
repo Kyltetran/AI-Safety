@@ -135,7 +135,7 @@ To ensure transparency in model decision-making, we applied **SHAP (SHapley Addi
 
 ---
 
-## Key Research Findings
+## Key Research Findings on WELFake
 
 ### Classical ML vs. Deep Learning Trade-offs
 
@@ -191,6 +191,7 @@ This research supports an **educational website** that:
 - Provides transparent documentation of our research process
 
 **We are researchers and educators, not building a commercial detection tool.** Our goal is to inform better decision-making about AI deployment in high-stakes information environments.
+
 
 
 
